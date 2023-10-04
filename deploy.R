@@ -2,6 +2,7 @@ R.version.string
 
 install.packages("rsconnect", dependencies=TRUE, repos='http://cran.rstudio.com/')
 library(rsconnect)
+library(rlang)
 rsconnect::appDependencies()
 # a function to stop the script when one of the variables cannot be found
 # and to strip quotation marks from the secrets when you supplied them
@@ -17,4 +18,4 @@ error_on_missing_name <- function(name) {
 setAccountInfo(name = error_on_missing_name("SHINY_ACC_NAME"),
                token = error_on_missing_name("TOKEN"),
                secret = error_on_missing_name("SECRET"))
-deployApp(appFiles = c("ui.R", "server.R"))
+deployApp(appFiles = c("ui.R", "server.R"), forceUpdate=T)
