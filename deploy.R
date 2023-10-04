@@ -1,10 +1,4 @@
-# installing/loading the package:
-if(!require(installr)) {
-  install.packages("installr"); 
-  require(installr)
-} #load / install+load installr
-
-updateR() 
+R.version.string
 
 install.packages("rsconnect", dependencies=TRUE, repos="https://cran.r-project.org/src/contrib/rsconnect_1.1.1.tar.gz")
 library(rsconnect)
