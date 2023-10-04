@@ -1,10 +1,25 @@
 R.version.string
+packages_to_install <- c(
+  "BAS", "MASS", "Matrix", "R6", "RColorBrewer", "Rcpp", "askpass", "base64enc",
+  "bayestestR", "bit", "bit64", "bslib", "cachem", "cli", "clipr", "colorspace",
+  "commonmark", "cpp11", "crayon", "curl", "data.table", "datawizard", "digest",
+  "ellipsis", "evaluate", "fansi", "farver", "fastmap", "fontawesome", "fs",
+  "ggplot2", "glue", "gridExtra", "gtable", "highr", "hms", "htmltools", "httpuv",
+  "insight", "isoband", "jquerylib", "jsonlite", "knitr", "labeling", "later",
+  "lattice", "lifecycle", "magrittr", "markdown", "memoise", "mgcv", "mime",
+  "minpack.lm", "mixtox", "munsell", "nlme", "openssl", "packrat", "pillar",
+  "pkgconfig", "prettyunits", "progress", "promises", "rappdirs", "readr", "renv",
+  "rlang", "rsconnect", "rstudioapi", "sass", "scales", "shiny", "shinyscreenshot",
+  "sourcetools", "stringi", "stringr", "sys", "tibble", "tidyselect", "tzdb", "utf8",
+  "uuid", "vctrs", "viridisLite", "vroom", "withr", "xfun", "xtable", "yaml"
+)
 
-install.packages("rsconnect", dependencies=TRUE, repos='http://cran.rstudio.com/')
-install.packages("rlang", dependencies=TRUE, repos='http://cran.rstudio.com/')
-library(rsconnect)
-library(rlang)
-rsconnect::appDependencies()
+
+install.packages(packages_to_install dependencies=TRUE, repos='http://cran.rstudio.com/')
+for (package in packages_to_install) {
+  library(package, character.only = TRUE)
+}
+
 # a function to stop the script when one of the variables cannot be found
 # and to strip quotation marks from the secrets when you supplied them
 error_on_missing_name <- function(name) {
