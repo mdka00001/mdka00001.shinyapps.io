@@ -1,4 +1,4 @@
-install.packages("rsconnect")
+install.packages("rsconnect", dependencies=TRUE, repos="https://cran.r-project.org/src/contrib/rsconnect_1.1.1.tar.gz")
 library(rsconnect)
 
 # a function to stop the script when one of the variables cannot be found
