@@ -1,6 +1,6 @@
 R.version.string
 
-install.packages("rsconnect", dependencies=TRUE, repos=repos='http://cran.rstudio.com/')
+install.packages("rsconnect", dependencies=TRUE, repos='http://cran.rstudio.com/')
 library(rsconnect)
 
 # a function to stop the script when one of the variables cannot be found
