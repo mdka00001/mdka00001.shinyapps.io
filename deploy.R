@@ -1,6 +1,7 @@
 R.version.string
 
 install.packages("rsconnect", dependencies=TRUE, repos='http://cran.rstudio.com/')
+install.packages("rlang", dependencies=TRUE, repos='http://cran.rstudio.com/')
 library(rsconnect)
 library(rlang)
 rsconnect::appDependencies()
