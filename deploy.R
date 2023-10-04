@@ -1,3 +1,4 @@
+install.packages("rsconnect")
 library(rsconnect)
 
 # a function to stop the script when one of the variables cannot be found
