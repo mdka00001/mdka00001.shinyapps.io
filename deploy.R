@@ -15,7 +15,7 @@ packages_to_install <- c(
 )
 
 
-install.packages(packages_to_install dependencies=TRUE, repos='http://cran.rstudio.com/')
+install.packages(packages_to_install, dependencies=TRUE, repos='http://cran.rstudio.com/')
 for (package in packages_to_install) {
   library(package, character.only = TRUE)
 }
