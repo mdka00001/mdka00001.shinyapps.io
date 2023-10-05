@@ -19,7 +19,7 @@ install.packages(packages_to_install)
 for (package in packages_to_install) {
   library(package, character.only = TRUE)
 }
-
+library(rsconnect)
 # a function to stop the script when one of the variables cannot be found
 # and to strip quotation marks from the secrets when you supplied them
 error_on_missing_name <- function(name) {
