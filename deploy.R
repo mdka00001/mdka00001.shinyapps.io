@@ -9,13 +9,14 @@ packages_to_install <- c(
   "lattice", "lifecycle", "magrittr", "markdown", "memoise", "mgcv", "mime",
   "minpack.lm", "mixtox", "munsell", "nlme", "openssl", "packrat", "pillar",
   "pkgconfig", "prettyunits", "progress", "promises", "rappdirs", "readr", "renv",
-  "rlang", "rsconnect", "rstudioapi", "sass", "scales", "shiny", "shinyscreenshot",
+  "rlang", "rstudioapi", "sass", "scales", "shiny", "shinyscreenshot",
   "sourcetools", "stringi", "stringr", "sys", "tibble", "tidyselect", "tzdb", "utf8",
   "uuid", "vctrs", "viridisLite", "vroom", "withr", "xfun", "xtable", "yaml"
 )
 
 
-install.packages(packages_to_install, dependencies=TRUE, repos='http://cran.rstudio.com/')
+install.packages("rsconnect", dependencies=TRUE, repos='http://cran.rstudio.com/')
+install.packages(packages_to_install)
 for (package in packages_to_install) {
   library(package, character.only = TRUE)
 }
