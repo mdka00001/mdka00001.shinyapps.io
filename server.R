@@ -262,12 +262,28 @@ makePlot2 = function(file){
 
 shinyServer(function(input, output){
 
+  uploaded_data <- reactive({
+    # Path to your pre-uploaded CSV file
+    csv_file <- "sample_input.txt"
+    
+    # Check if the file exists
+    if (file.exists(csv_file)) {
+      # Read the file into a data frame
+      read.csv(csv_file)
+    } else {
+      # If the file doesn't exist, return NULL
+      NULL
+    }
+  })
+
+  # Enable downloading of the pre-uploaded file
   output$downloadText <- downloadHandler(
     filename = function() {
-      "sample_input.txt"  # Provide the name you want for the downloaded file
+      "sample_input.txt"  # Name of the file to be downloaded
     },
     content = function(file) {
-      file.copy("sample_input.txt", file)  # Copy the file to the temporary download location
+      # Write the pre-uploaded data to the file for download
+      write.csv(uploaded_data(), file)
     }
   )
   
