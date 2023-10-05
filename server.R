@@ -340,7 +340,7 @@ shinyServer(function(input, output){
       plot(makePlot(input$input1$datapath, input$func, input$EC, input$ml)$plot)
       dev.off()
       zip(zipfile = "results", files = c("ca_ia_pred.csv", "ca_ia_pred_log.csv", "EC_per_mg.txt", "weight_fraction.txt", "plot.png"))
-      file.copy("/home/mixtox/srv/shiny-server/kist/results.zip", file)
+      file.copy("/home/mixtox/results.zip", file)
       # write.table(paste(text,collapse=", "), file,col.names=FALSE)
     }
   )
