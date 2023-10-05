@@ -14,7 +14,6 @@ packages_to_install <- c(
   "uuid", "vctrs", "viridisLite", "vroom", "withr", "xfun", "xtable", "yaml"
 )
 
-
 install.packages("rsconnect", dependencies=TRUE, repos='http://cran.rstudio.com/')
 install.packages(packages_to_install)
 for (package in packages_to_install) {
