@@ -259,7 +259,7 @@ makePlot2 = function(file){
     }
   }
 }
-csv_file <- "sample_input.txt"
+csv_file <- read.lines("sample_input.txt")
 shinyServer(function(input, output){
 
   
