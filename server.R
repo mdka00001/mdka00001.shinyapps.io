@@ -261,6 +261,15 @@ makePlot2 = function(file){
 }
 
 shinyServer(function(input, output){
+
+  output$downloadText <- downloadHandler(
+    filename = function() {
+      "sample_input.txt"  # Provide the name you want for the downloaded file
+    },
+    content = function(file) {
+      file.copy("/srv/shiny-server/kist/sample_input.txt", file)  # Copy the file to the temporary download location
+    }
+  )
   
   iaa_input = eventReactive(input$action_button,{
     makePlot(input$input1$datapath, input$func, input$EC, input$ml)$iaa
@@ -296,14 +305,7 @@ shinyServer(function(input, output){
   output$out_vol_3 <- renderUI({
     paste0("Total concentration of mixture predicted by IA and CA model")
   })
-  output$downloadText <- downloadHandler(
-    filename = function() {
-      "sample_input.txt"  # Provide the name you want for the downloaded file
-    },
-    content = function(file) {
-      file.copy("/srv/shiny-server/kist/sample_input.txt", file)  # Copy the file to the temporary download location
-    }
-  )
+  
   }
   
   
