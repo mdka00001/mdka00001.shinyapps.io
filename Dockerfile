@@ -7,4 +7,6 @@ WORKDIR /home/mixtox
 COPY ui.R ui.R 
 COPY server.R server.R
 COPY deploy.R deploy.R
+COPY sample_input.txt sample_input.txt
+COPY mix.txt mix.txt 
 CMD Rscript deploy.R
