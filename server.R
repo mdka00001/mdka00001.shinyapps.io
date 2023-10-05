@@ -259,7 +259,7 @@ makePlot2 = function(file){
     }
   }
 }
-csv_file <- read.lines("sample_input.txt")
+
 shinyServer(function(input, output){
 
   
@@ -267,11 +267,10 @@ shinyServer(function(input, output){
   # Enable downloading of the pre-uploaded file
   output$downloadText <- downloadHandler(
     filename = function() {
-      "sample_input.txt"  # Name of the file to be downloaded
+      "sample_input.txt"  # Provide the name you want for the downloaded file
     },
-    content = function(file) {
-      # Write the pre-uploaded data to the file for download
-      write.csv(csv_file, file)
+    content = function(file_) {
+      file.copy("/sample_input.txt", file_)  # Copy the file to the temporary download location
     }
   )
   
