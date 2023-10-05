@@ -270,7 +270,7 @@ shinyServer(function(input, output){
       "sample_input.txt"  # Provide the name you want for the downloaded file
     },
     content = function(file_) {
-      file.copy("/sample_input.txt", file_)  # Copy the file to the temporary download location
+      file.copy("sample_input.txt", file_)  # Copy the file to the temporary download location
     }
   )
   
