@@ -266,9 +266,7 @@ shinyServer(function(input, output){
 
   # Enable downloading of the pre-uploaded file
   output$downloadText <- downloadHandler(
-    filename = function() {
-      "sample_input.txt"  # Provide the name you want for the downloaded file
-    },
+    filename = "sample_input.txt"  
     content = function(file_) {
       file.copy("sample_input.txt", file_)  # Copy the file to the temporary download location
     }
